@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formachi.uz | Futbol forma va butsiylar</title>
+    <meta name="description" content="Formachi.uz — futbol forma, sarakanoshka va butsiylar. O'zbekiston bo'ylab dostavka.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <div class="brand">
+                <img src="images/logo.jpg" alt="Formachi logo" class="logo">
+                <div>
+                    <h1>Formachi.uz</h1>
+                    <p>Futbol forma, sarakanoshka va butsiylar</p>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="#products">Mahsulotlar</a>
+                <a href="#about">Nega biz</a>
+                <a href="#contact">Aloqa</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <span class="badge">Top klublar formalari</span>
+                <h2>Original uslubdagi futbol mahsulotlari</h2>
+                <p>
+                    Futbol formalar, retro formalar, sarakanoshka va butsiylar.
+                    Narxlar o‘rtacha 89 000 so‘mdan 300 000 so‘mgacha.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="https://t.me/formachi_uz" target="_blank" class="btn primary">Telegram orqali buyurtma</a>
+                    <a href="https://www.instagram.com/formachi.uz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn secondary">Instagram ko‘rish</a>
+                </div>
+
+                <div class="hero-points">
+                    <span>🚚 O‘zbekiston bo‘ylab dostavka</span>
+                    <span>📍 Uchtepa outlet center B-157</span>
+                    <span>☎️ 94 911 51 23</span>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <h3>Tez ma’lumot</h3>
+                <ul>
+                    <li>✔️ Futbol formalar</li>
+                    <li>✔️ Retro formalar</li>
+                    <li>✔️ Sarakanoshka</li>
+                    <li>✔️ Butsiylar</li>
+                </ul>
+                <p class="price-range">Narx oralig‘i: <strong>89 000 — 300 000 so‘m</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="section-title">Mahsulotlar</h2>
+            <p class="section-subtitle">Ombordagi mavjud mahsulotlar real holatda</p>
+
+            <div class="cards" id="products-list">
+                <p>Mahsulotlar yuklanmoqda...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section alt" id="about">
+        <div class="container">
+            <h2 class="section-title">Nega aynan Formachi.uz?</h2>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>Top assortiment</h3>
+                    <p>Futbol forma, retro forma, sarakanoshka va butsiylar bir joyda.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>Tez aloqa</h3>
+                    <p>Telegram va Instagram orqali tezkor javob va buyurtma qabul qilinadi.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>Dostavka mavjud</h3>
+                    <p>O‘zbekiston bo‘ylab yetkazib berish xizmati mavjud.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>Offline nuqta bor</h3>
+                    <p>Uchtepa outlet center B-157 do‘kon orqali ham murojaat qilish mumkin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+        <div class="container contact-box">
+            <h2 class="section-title">Bog‘lanish</h2>
+            <p class="contact-text">Buyurtma yoki savollar uchun qulay platformani tanlang.</p>
+
+            <div class="contact-buttons">
+                <a href="https://t.me/formachi_uz" target="_blank" class="btn primary">Telegram</a>
+                <a href="https://www.instagram.com/formachi.uz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn secondary">Instagram</a>
+                <a href="tel:+998949115123" class="btn dark">Qo‘ng‘iroq qilish</a>
+            </div>
+
+            <div class="contact-info">
+                <p><strong>Manzil:</strong> Uchtepa outlet center B-157 do‘kon</p>
+                <p><strong>Telefon:</strong> +998 94 911 51 23</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© 2026 Formachi.uz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+        const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuXcZsilHuelPqm6JQ3lkJs5OvptLfwed9Xr2a4FSU0clp2bpo7aX6jlcTNE1tzKl46m4a1rLWTPML/pub?output=csv";
+
+        fetch(sheetURL)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.trim().split("\n").slice(1);
+                const container = document.getElementById("products-list");
+
+                container.innerHTML = "";
+
+                rows.forEach(row => {
+                    const cols = row.split(",");
+
+                    const name = cols[1] ? cols[1].replace(/"/g, "").trim() : "";
+                    const price = cols[2] ? cols[2].replace(/"/g, "").trim() : "";
+                    const stock = cols[3] ? cols[3].replace(/"/g, "").trim() : "0";
+                    const image = cols[4] ? cols[4].replace(/"/g, "").trim() : "https://via.placeholder.com/400x280?text=Mahsulot";
+                    const status = cols[5] ? cols[5].replace(/"/g, "").trim().toLowerCase() : "active";
+
+                    if (!name) return;
+                    if (status && status !== "active") return;
+
+                    const stockNumber = Number(stock);
+                    const stockText = stockNumber > 0 ? `Soni: ${stockNumber} ta` : "Tugagan";
+                    const buttonText = stockNumber > 0 ? "Buyurtma berish" : "Hozir yo‘q";
+
+                    container.innerHTML += `
+                        <div class="card">
+                            <img src="${image}" alt="${name}">
+                            <div class="card-body">
+                                <h3>${name}</h3>
+                                <p class="card-price">${price} so‘m</p>
+                                <p>${stockText}</p>
+                                <a href="https://t.me/formachi_uz" target="_blank" class="card-btn">${buttonText}</a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                if (container.innerHTML.trim() === "") {
+                    container.innerHTML = "<p>Hozircha faol mahsulotlar topilmadi.</p>";
+                }
+            })
+            .catch(error => {
+                console.error("Sheet yuklanmadi:", error);
+                document.getElementById("products-list").innerHTML = "<p>Mahsulotlarni yuklashda xatolik bo‘ldi.</p>";
+            });
+    </script>
+
+</body>
+</html>

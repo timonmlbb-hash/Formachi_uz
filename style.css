@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #07294d;
+    --navy-dark: #051f38;
+    --white: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.topbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.brand h1 {
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 2px;
+}
+
+.brand p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: var(--navy);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+    color: var(--white);
+    padding: 70px 0;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero-text h2 {
+    font-size: 44px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.hero-text p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.btn.primary {
+    background: var(--white);
+    color: var(--navy);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.btn.dark {
+    background: #111827;
+    color: #fff;
+}
+
+.btn.dark:hover {
+    opacity: 0.92;
+}
+
+.hero-points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-card h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.hero-card ul {
+    list-style: none;
+    margin-bottom: 18px;
+}
+
+.hero-card li {
+    margin-bottom: 10px;
+}
+
+.price-range {
+    font-size: 16px;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.section.alt {
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 34px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.card-price {
+    font-size: 20px;
+    color: var(--navy) !important;
+    font-weight: 700;
+    margin: 14px 0;
+}
+
+.card-btn {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    background: var(--navy);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.card-btn:hover {
+    background: var(--navy-dark);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.feature {
+    background: #f9fbff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.feature h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.contact-section {
+    background: linear-gradient(180deg, #f5f7fb 0%, #eef3fa 100%);
+}
+
+.contact-box {
+    text-align: center;
+}
+
+.contact-text {
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 22px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+.footer {
+    background: var(--navy-dark);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 22px 0;
+}
+
+.footer-inner {
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 980px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        width: 54px;
+        height: 54px;
+    }
+}
